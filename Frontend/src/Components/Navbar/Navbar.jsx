@@ -198,6 +198,10 @@ export default function Navbar() {
       ref={headerRef}
       className="absolute bai inset-x-[6px] top-[6px] z-30 grid h-[62px] grid-cols-[1fr_auto_1fr] items-center text-sm text-white md:h-[76px] lg:h-20 xl:text-base"
     >
+
+
+
+    
       {/* Sliding liquid-glass pill (desktop only): one element that travels between links */}
       {pill && (
         <span
