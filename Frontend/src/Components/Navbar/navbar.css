@@ -1,0 +1,39 @@
+.liquid-glass {
+  position: relative;
+  /* Fill: #FFFFFF 10% */
+  background: rgba(255, 255, 255, 0.10);
+  /* Liquid glass effect (frost + saturation) */
+  backdrop-filter: blur(12px) saturate(170%);
+  -webkit-backdrop-filter: blur(12px) saturate(170%);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 2px rgba(255, 255, 255, 0.15);
+}
+
+/* Border: 1px, angular gradient, center alignment */
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: -0.5px;              /* center-aligned stroke */
+  border-radius: inherit;
+  padding: 1px;               /* stroke width */
+  pointer-events: none;
+  background: conic-gradient(
+    from 90deg,
+    rgba(64, 64, 64, 0.50)    0%,
+    rgba(64, 64, 64, 0.35)    14.3%,
+    #FFFFFF                   28.6%,
+    rgba(255, 255, 255, 0.50) 42.9%,
+    rgba(64, 64, 64, 0.35)    57.1%,
+    #F9F9F9                   71.4%,
+    #FFFFFF                   85.7%,
+    rgba(249, 249, 249, 0.50) 100%
+  );
+  /* cut out the middle so only the 1px ring shows */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}

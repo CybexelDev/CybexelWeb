@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@keyframes ball-float {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50%      { transform: translateY(-14px) rotate(4deg); }
+}
+
+.comfortaa {
+  font-family: "Comfortaa", sans-serif;
+}
+
+.bai {
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.outfit {
+  font-family: "Outfit", sans-serif;
+}
